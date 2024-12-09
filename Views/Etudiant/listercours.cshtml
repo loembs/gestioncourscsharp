@@ -1,0 +1,37 @@
+﻿@using GestionCours.Models
+@* @model type_de_la_donne *@
+@model Etudiant
+
+
+@{
+    ViewData["Title"] = "Client Page";
+    @* Layout = "_Layout"; *@
+}
+
+@model IEnumerable<GestionCours.Models.Course>
+
+<h1>Mes Cours</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Module</th>
+            <th>Professeur</th>
+            <th>Heure Début</th>
+            <th>Heure Fin</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var cours in Model)
+        {
+    using GestionCours.Models;
+
+            <tr>
+                <td>@cours.Module.Libelle</td>
+                <td>@cours.Professeur.Nom @cours.Professeur.Prenom</td>
+                <td>@cours.HeureDebut</td>
+                <td>@cours.HeureFin</td>
+            </tr>
+        }
+    </tbody>
+</table>

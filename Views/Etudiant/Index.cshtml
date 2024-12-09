@@ -1,0 +1,23 @@
+﻿@model IEnumerable<GestionCours.Models.Absence>
+
+<h1>Mes Absences</h1>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Date</th>
+            <th>Etudiant</th>
+            <th>Cours</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var absence in Model)
+        {
+            <tr>
+                <td>@absence.date</td>
+                <td>@absence.Etudiant.Nomcomplet</td>
+                <td>@absence.Course.libelle</td>
+            </tr>
+        }
+    </tbody>
+</table>
